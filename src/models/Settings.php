@@ -39,7 +39,10 @@ class Settings extends Model
      *
      * @var string
      */
-    public $someAttribute = 'Some Default';
+    public $addVolumeHandle = '';
+    public $addRandomString = '';
+    public $filenameFormat = 'time';
+    public $delimiter = '-';
 
     // Public Methods
     // =========================================================================
@@ -57,8 +60,8 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            ['addRandomString', 'string'],
+            ['filenameFormat', 'string'],
         ];
     }
 }
