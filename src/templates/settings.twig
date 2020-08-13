@@ -17,10 +17,51 @@
 
 {% do view.registerAssetBundle("bitpart\\renamemultibytefilename\\assetbundles\\renamemultibytefilename\\RenameMultibyteFilenameAsset") %}
 
+<h2>{{ 'Format'|t }}</h2>
+
+{{ forms.select({
+    id: 'filenameFormat',
+    name: 'filenameFormat',
+    options: [
+        { label: 'Time (Formatted: YmdHis)', value: 'time' },
+        { label: 'A hash value', value: 'hash' },
+        { label: 'Asset ID', value: 'id' }
+    ],
+    value: settings['filenameFormat']
+}) }}
+
+<h2>{{ 'Volume Handle Name'|t }}</h2>
+
+{{ forms.select({
+    id: 'addVolumeHandle',
+    name: 'addVolumeHandle',
+    options: [
+        { label: 'Do not add', value: '' },
+        { label: 'Insert before a filename', value: 'before' },
+        { label: 'Add after a filename', value: 'after' }
+    ],
+    value: settings['addVolumeHandle']
+}) }}
+
+<h2>{{ 'Random String'|t }}</h2>
+
+{{ forms.select({
+    id: 'addRandomString',
+    name: 'addRandomString',
+    options: [
+        { label: 'Do not add', value: '' },
+        { label: 'Insert before a filename', value: 'before' },
+        { label: 'Add after a filename', value: 'after' }
+    ],
+    value: settings['addRandomString']
+}) }}
+
+<hr>
 {{ forms.textField({
-    label: 'Some Field',
-    instructions: 'Enter some setting here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: settings['someAttribute']})
-}}
+    label: 'Delimiter'|t,
+    size: 4,
+    instructions: 'Join words above with',
+    id: 'delimiter',
+    name: 'delimiter',
+    value: settings['delimiter']
+}) }}

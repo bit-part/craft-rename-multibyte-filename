@@ -10,13 +10,15 @@
 
 namespace bitpart\renamemultibytefilename;
 
-use bitpart\renamemultibytefilename\services\Filename as FilenameService;
 use bitpart\renamemultibytefilename\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
+use craft\helpers\ElementHelper;
+use craft\services\Elements;
+use craft\services\Assets;
 
 use yii\base\Event;
 
@@ -104,6 +106,31 @@ class RenameMultibyteFilename extends Plugin
                 }
             }
         );
+
+        $filenameFormat = RenameMultibyteFilename::$plugin->getSettings()->filenameFormat;
+        if (in_array($filenameFormat, ['time', 'hash'])) {
+            Event::on(
+                Elements::class,
+                Elements::EVENT_BEFORE_SAVE_ELEMENT,
+                function(Event $event) {
+                    $element = $event->element;
+                    if ($element instanceof craft\elements\Asset) {
+                        RenameMultibyteFilename::$plugin->filename->rename($element, 'EVENT_BEFORE_SAVE_ELEMENT');
+                    }
+                });
+        }
+        else {
+            Event::on(
+                Elements::class,
+                Elements::EVENT_AFTER_SAVE_ELEMENT,
+                function(Event $event) {
+                    $element = $event->element;
+                    if ($element instanceof craft\elements\Asset) {
+                        RenameMultibyteFilename::$plugin->filename->rename($element, 'EVENT_AFTER_SAVE_ELEMENT');
+                    }
+                });
+        }
+
 
 /**
  * Logging in Craft involves using one of the following methods:

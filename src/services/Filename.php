@@ -14,6 +14,8 @@ use bitpart\renamemultibytefilename\RenameMultibyteFilename;
 
 use Craft;
 use craft\base\Component;
+use craft\helpers\StringHelper;
+use DateTime;
 
 /**
  * Filename Service
@@ -39,17 +41,80 @@ class Filename extends Component
      *
      * From any other plugin file, call it like this:
      *
-     *     RenameMultibyteFilename::$plugin->filename->exampleService()
+     *     RenameMultibyteFilename::$plugin->filename->rename()
      *
+     * @param $asset
      * @return mixed
      */
-    public function exampleService()
+    public function rename(&$asset, $hook)
     {
-        $result = 'something';
-        // Check our Plugin's settings for `someAttribute`
-        if (RenameMultibyteFilename::$plugin->getSettings()->someAttribute) {
+        $filename = $asset->getFilename(false);
+        $length = strlen($filename);
+        $mbLength = mb_strlen($filename);
+        if ($length === $mbLength) {
+            return true;
         }
 
-        return $result;
+        $settings = RenameMultibyteFilename::$plugin->getSettings();
+        $filenameParts = [];
+
+        // Format
+        $filenameFormat = $settings->filenameFormat;
+        switch ($filenameFormat) {
+            case 'time':
+                $now = new DateTime();
+                $filenameParts[] = $now->format('YmsHis');
+                break;
+            case 'hash':
+                $filenameParts[] = hash('md5', $filename);
+                break;
+            case 'id':
+                $assetId = $asset->id;
+                $filenameParts[] = $assetId;
+                break;
+        }
+        
+        // Volume Handle Name
+        $addVolumeHandle = $settings->addVolumeHandle;
+        $volumeHandle = $asset->volume->handle;
+        if ($addVolumeHandle) {
+            switch ($addVolumeHandle) {
+                case 'before':
+                    array_unshift($filenameParts, $volumeHandle);
+                    break;
+                case 'after':
+                    $filenameParts[] = $volumeHandle;
+                    break;
+            }
+        }
+        
+        // Random String
+        $addRandomString = $settings->addRandomString;
+        if ($addRandomString) {
+            $randomString = StringHelper::randomString(8);
+            switch ($addRandomString) {
+                case 'before':
+                    array_unshift($filenameParts, $randomString);
+                    break;
+                case 'after':
+                    $filenameParts[] = $randomString;
+                    break;
+            }
+        }
+        
+        // Create a new filename
+        $delimiter = $settings->delimiter;
+        $extension = $asset->getExtension();
+        $newFilename = implode($delimiter, $filenameParts) . '.' . $extension;
+        
+        // Rename
+        if ($hook === 'EVENT_BEFORE_SAVE_ELEMENT') {
+            $asset->title = $filename;
+            $asset->filename = $newFilename;
+        }
+        else {
+            $folder = $asset->getFolder();
+            return Craft::$app->assets->moveAsset($asset, $folder, $newFilename);;
+        }
     }
 }
