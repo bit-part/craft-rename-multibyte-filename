@@ -1,0 +1,49 @@
+{
+    "name": "bitpart/rename-multibyte-filename",
+    "description": "Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when an asset is uploaded.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "rename multibyte filename"
+    ],
+    "support": {
+        "docs": "https://github.com/bit-part/craft-rename-multibyte-filename/blob/master/README.md",
+        "issues": "https://github.com/bit-part/craft-rename-multibyte-filename/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bit part LLC",
+            "homepage": "https://bit-part.net"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "bitpart\\renamemultibytefilename\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Rename Multibyte Filename",
+        "handle": "rename-multibyte-filename",
+        "developer": "bit part LLC",
+        "developerUrl": "https://bit-part.net",
+        "documentationUrl": "https://github.com/bit-part/craft-rename-multibyte-filename/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/bit-part/craft-rename-multibyte-filename/master/CHANGELOG.md",
+        "components": {
+            "filename": "bitpart\\renamemultibytefilename\\services\\Filename"
+        },
+        "class": "bitpart\\renamemultibytefilename\\RenameMultibyteFilename"
+    }
+}

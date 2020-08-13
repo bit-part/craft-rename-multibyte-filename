@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Rename Multibyte Filename plugin for Craft CMS 3.x
+ *
+ * Rename Multibyte Filename Settings.twig
+ *
+ * @author    bit part LLC
+ * @copyright Copyright (c) 2020 bit part LLC
+ * @link      https://bit-part.net
+ * @package   RenameMultibyteFilename
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("bitpart\\renamemultibytefilename\\assetbundles\\renamemultibytefilename\\RenameMultibyteFilenameAsset") %}
+
+{{ forms.textField({
+    label: 'Some Field',
+    instructions: 'Enter some setting here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}
