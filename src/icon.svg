@@ -1,52 +1,46 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="99.012px" height="99.012px" viewBox="0 0 99.012 99.012" style="enable-background:new 0 0 99.012 99.012;"
-	 xml:space="preserve">
-<g>
-	<g>
-		<path d="M25.08,15.648c-0.478-0.478-1.135-0.742-1.805-0.723c-0.675,0.017-1.314,0.309-1.768,0.808
-			c-14.829,16.325-6.762,51.623-5.916,55.115L0.723,85.717C0.26,86.18,0,86.808,0,87.463c0,0.654,0.26,1.283,0.723,1.746
-			l8.958,8.957c0.482,0.48,1.114,0.723,1.746,0.723c0.631,0,1.264-0.24,1.745-0.723l14.865-14.864
-			c7.237,1.859,16.289,2.968,24.28,2.968c9.599,0,22.739-1.543,30.836-8.886c0.5-0.454,0.793-1.093,0.809-1.769
-			c0.018-0.676-0.245-1.328-0.723-1.805L25.08,15.648z"/>
-		<path d="M46.557,30.345c0.482,0.482,1.114,0.723,1.746,0.723c0.632,0,1.264-0.241,1.746-0.724l18.428-18.428
-			c1.305-1.305,2.023-3.04,2.023-4.885c0-1.846-0.719-3.582-2.023-4.886c-1.305-1.305-3.039-2.022-4.885-2.022
-			c-1.845,0-3.581,0.718-4.887,2.022L40.277,20.574c-0.964,0.964-0.964,2.527,0,3.492L46.557,30.345z"/>
-		<path d="M96.99,30.661c-1.305-1.305-3.039-2.024-4.885-2.024c-1.847,0-3.582,0.718-4.886,2.023L68.79,49.089
-			c-0.464,0.463-0.724,1.091-0.724,1.746s0.26,1.282,0.724,1.746l6.28,6.278c0.481,0.482,1.113,0.724,1.746,0.724
-			c0.631,0,1.264-0.241,1.746-0.724l18.43-18.429C99.686,37.735,99.686,33.353,96.99,30.661z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="440px" height="440px" viewBox="0 0 440 440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="220.576172" cy="220.007812" r="220"></circle>
+        <polygon id="path-3" points="220.076172 213.007812 281.576172 274.007812 158.576172 274.007812"></polygon>
+        <filter x="-9.3%" y="-15.6%" width="118.7%" height="137.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.650786713 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle" transform="translate(-0.576172, -0.007812)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FADB6B" xlink:href="#path-1"></use>
+            <g id="Triangle" mask="url(#mask-2)" transform="translate(220.076172, 243.507812) rotate(-180.000000) translate(-220.076172, -243.507812) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#66361B" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+            <rect fill="#65361C" mask="url(#mask-2)" x="-183.810547" y="-260.837891" width="771" height="477"></rect>
+        </g>
+        <path d="M220.5,186.704238 L160.214109,246.5 L280.785891,246.5 L220.5,186.704238 Z" id="Triangle" stroke="#66361B" fill="#66361B" transform="translate(220.500000, 216.500000) rotate(-180.000000) translate(-220.500000, -216.500000) "></path>
+        <text id="A-a" font-family="Roboto-Bold, Roboto" font-size="165" font-weight="bold" fill="#66361B">
+            <tspan x="115" y="390">A</tspan>
+            <tspan x="226.020508" y="390" font-size="21"> </tspan>
+            <tspan x="231.25" y="390">a</tspan>
+        </text>
+        <circle id="Oval" stroke="#66361B" stroke-width="7" cx="220" cy="220.5" r="217"></circle>
+        <g id="Group-2" transform="translate(65.000000, 93.000000)" fill="#FADB6B" font-size="100">
+            <text id="あ" font-family="HiraginoSans-W6, Hiragino Sans" font-weight="500">
+                <tspan x="0" y="88">あ</tspan>
+            </text>
+            <text id="啊" font-family="HiraginoSans-W6, Hiragino Sans" font-weight="500">
+                <tspan x="209" y="90">啊</tspan>
+            </text>
+            <text id="아" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo" font-weight="bold">
+                <tspan x="109" y="90">아</tspan>
+            </text>
+        </g>
+    </g>
 </svg>
