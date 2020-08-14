@@ -57,11 +57,18 @@
 }) }}
 
 <hr>
-{{ forms.textField({
-    label: 'Delimiter'|t,
-    size: 4,
-    instructions: 'Join words above with',
+
+<h2>{{ 'Delimiter'|t }}</h2>
+
+<p>{{ 'Join words above with'|t }}</p>
+{{ forms.select({
     id: 'delimiter',
     name: 'delimiter',
+    options: [
+        { label: 'Hyphen', value: '-' },
+        { label: 'Underscore', value: '_' },
+        { label: 'Dot', value: '.' },
+        { label: 'No delimiter', value: '' }
+    ],
     value: settings['delimiter']
 }) }}
