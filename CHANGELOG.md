@@ -1,9 +1,6 @@
 # Rename Multibyte Filename Changelog
 
-All notable changes to this project will be documented in this file.
+## 1.0.0 - 2020-08-14
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
-
-## 1.0.0 - 2020-08-12
 ### Added
 - Initial release

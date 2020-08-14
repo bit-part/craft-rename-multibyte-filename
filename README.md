@@ -1,5 +1,7 @@
 # Rename Multibyte Filename plugin for Craft CMS 3.x
 
+[日本語ドキュメント](README.ja.md)
+
 When a file whose filename contains multibyte character is uploaded, the filename will be renamed to ASCII character automatically.
 
 ![Screenshot](resources/img/screenshot-min.png)
@@ -27,6 +29,8 @@ composer require bitpart/rename-multibyte-filename
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Rename Multibyte Filename.
 
 ## Configuring Rename Multibyte Filename
+
+![Screenshot](resources/img/config-en-min.png)
 
 ### Format
 
