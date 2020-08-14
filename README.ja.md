@@ -1,5 +1,7 @@
 # Rename Multibyte Filename プラグイン（Craft CMS 3.x 用）
 
+[English](README.md)
+
 ファイル名に漢字やひらがな、カタカナなどのマルチバイト文字（全角文字）が含まれているファイルがアップロードされたとき、自動で半角英数のファイル名に変換するプラグインです。
 
 ![Screenshot](resources/img/screenshot-min.png)

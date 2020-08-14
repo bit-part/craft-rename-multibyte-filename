@@ -1,5 +1,7 @@
 # Rename Multibyte Filename plugin for Craft CMS 3.x
 
+[日本語ドキュメント](README.ja.md)
+
 When a file whose filename contains multibyte character is uploaded, the filename will be renamed to ASCII character automatically.
 
 ![Screenshot](resources/img/screenshot-min.png)
