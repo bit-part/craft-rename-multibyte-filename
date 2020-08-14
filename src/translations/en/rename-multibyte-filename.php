@@ -2,7 +2,7 @@
 /**
  * Rename Multibyte Filename plugin for Craft CMS 3.x
  *
- * Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when an asset is uploaded.
+ * Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when assets are uploaded.
  *
  * @link      https://bit-part.net
  * @copyright Copyright (c) 2020 bit part LLC
