@@ -1,6 +1,6 @@
 {
     "name": "bitpart/rename-multibyte-filename",
-    "description": "Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when an asset is uploaded.",
+    "description": "Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when assets are uploaded.",
     "type": "craft-plugin",
     "version": "1.0.0",
     "keywords": [
@@ -14,7 +14,7 @@
         "docs": "https://github.com/bit-part/craft-rename-multibyte-filename/blob/master/README.md",
         "issues": "https://github.com/bit-part/craft-rename-multibyte-filename/issues"
     },
-    "license": "MIT",
+    "license": "Craft",
     "authors": [
         {
             "name": "bit part LLC",
