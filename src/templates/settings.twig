@@ -17,58 +17,60 @@
 
 {% do view.registerAssetBundle("bitpart\\renamemultibytefilename\\assetbundles\\renamemultibytefilename\\RenameMultibyteFilenameAsset") %}
 
-<h2>{{ 'Format'|t }}</h2>
+{% set pluginHandle = 'rename-multibyte-filename' %}
+
+<h2>{{ 'Format'|t(pluginHandle) }}</h2>
 
 {{ forms.select({
     id: 'filenameFormat',
     name: 'filenameFormat',
     options: [
-        { label: 'Time (Formatted: YmdHis)', value: 'time' },
-        { label: 'A hash value', value: 'hash' },
-        { label: 'Asset ID', value: 'id' }
+        { label: 'Time (Formatted: YmdHis)'|t(pluginHandle), value: 'time' },
+        { label: 'A hash value'|t(pluginHandle), value: 'hash' },
+        { label: 'Asset ID'|t(pluginHandle), value: 'id' }
     ],
     value: settings['filenameFormat']
 }) }}
 
-<h2>{{ 'Volume Handle Name'|t }}</h2>
+<h2>{{ 'Volume Handle Name'|t(pluginHandle) }}</h2>
 
 {{ forms.select({
     id: 'addVolumeHandle',
     name: 'addVolumeHandle',
     options: [
-        { label: 'Do not add', value: '' },
-        { label: 'Insert before a filename', value: 'before' },
-        { label: 'Add after a filename', value: 'after' }
+        { label: 'Do not add'|t(pluginHandle), value: '' },
+        { label: 'Insert before a filename'|t(pluginHandle), value: 'before' },
+        { label: 'Add after a filename'|t(pluginHandle), value: 'after' }
     ],
     value: settings['addVolumeHandle']
 }) }}
 
-<h2>{{ 'Random String'|t }}</h2>
+<h2>{{ 'Random String'|t(pluginHandle) }}</h2>
 
 {{ forms.select({
     id: 'addRandomString',
     name: 'addRandomString',
     options: [
-        { label: 'Do not add', value: '' },
-        { label: 'Insert before a filename', value: 'before' },
-        { label: 'Add after a filename', value: 'after' }
+        { label: 'Do not add'|t(pluginHandle), value: '' },
+        { label: 'Insert before a filename'|t(pluginHandle), value: 'before' },
+        { label: 'Add after a filename'|t(pluginHandle), value: 'after' }
     ],
     value: settings['addRandomString']
 }) }}
 
 <hr>
 
-<h2>{{ 'Delimiter'|t }}</h2>
+<h2>{{ 'Delimiter'|t(pluginHandle) }}</h2>
 
-<p>{{ 'Join words above with'|t }}</p>
+<p>{{ 'Join words above with'|t(pluginHandle) }}</p>
 {{ forms.select({
     id: 'delimiter',
     name: 'delimiter',
     options: [
-        { label: 'Hyphen', value: '-' },
-        { label: 'Underscore', value: '_' },
-        { label: 'Dot', value: '.' },
-        { label: 'No delimiter', value: '' }
+        { label: 'Hyphen'|t(pluginHandle), value: '-' },
+        { label: 'Underscore'|t(pluginHandle), value: '_' },
+        { label: 'Dot'|t(pluginHandle), value: '.' },
+        { label: 'No delimiter'|t(pluginHandle), value: '' }
     ],
     value: settings['delimiter']
 }) }}
