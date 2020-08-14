@@ -30,6 +30,8 @@ composer require bitpart/rename-multibyte-filename
 
 ## Configuring Rename Multibyte Filename
 
+![Screenshot](resources/img/config-en-min.png)
+
 ### Format
 
 You can choose a format from options below.
