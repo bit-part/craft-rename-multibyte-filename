@@ -1,6 +1,6 @@
 <?php
 /**
- * Rename Multibyte Filename plugin for Craft CMS 3.x
+ * Rename Multibyte Filename plugin for Craft CMS 4.x / 5.x
  *
  * Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when assets are uploaded.
  *
@@ -57,7 +57,7 @@ class Settings extends Model
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['addRandomString', 'string'],
