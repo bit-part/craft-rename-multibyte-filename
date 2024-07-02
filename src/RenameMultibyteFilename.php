@@ -1,6 +1,6 @@
 <?php
 /**
- * Rename Multibyte Filename plugin for Craft CMS 3.x
+ * Rename Multibyte Filename plugin for Craft CMS 4.x / 5.x
  *
  * Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when assets are uploaded.
  *
@@ -14,6 +14,7 @@ use bitpart\renamemultibytefilename\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
+use craft\elements\Asset;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\helpers\ElementHelper;
@@ -61,21 +62,21 @@ class RenameMultibyteFilename extends Plugin
      *
      * @var string
      */
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
     /**
      * Set to `true` if the plugin should have a settings view in the control panel.
      *
      * @var bool
      */
-    public $hasCpSettings = true;
+    public bool $hasCpSettings = true;
 
     /**
      * Set to `true` if the plugin should have its own section (main nav item) in the control panel.
      *
      * @var bool
      */
-    public $hasCpSection = false;
+    public bool $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
@@ -114,7 +115,7 @@ class RenameMultibyteFilename extends Plugin
                 Elements::EVENT_BEFORE_SAVE_ELEMENT,
                 function(Event $event) {
                     $element = $event->element;
-                    if ($element instanceof craft\elements\Asset) {
+                    if ($element instanceof Asset) {
                         RenameMultibyteFilename::$plugin->filename->rename($element, 'EVENT_BEFORE_SAVE_ELEMENT');
                     }
                 });
@@ -125,8 +126,10 @@ class RenameMultibyteFilename extends Plugin
                 Elements::EVENT_AFTER_SAVE_ELEMENT,
                 function(Event $event) {
                     $element = $event->element;
-                    if ($element instanceof craft\elements\Asset) {
-                        RenameMultibyteFilename::$plugin->filename->rename($element, 'EVENT_AFTER_SAVE_ELEMENT');
+                    if ($element instanceof Asset) {
+                        if($event->isNew) {
+                            RenameMultibyteFilename::$plugin->filename->rename($element, 'EVENT_AFTER_SAVE_ELEMENT');
+                        }
                     }
                 });
         }
@@ -168,7 +171,7 @@ class RenameMultibyteFilename extends Plugin
      *
      * @return \craft\base\Model|null
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?\craft\base\Model
     {
         return new Settings();
     }
