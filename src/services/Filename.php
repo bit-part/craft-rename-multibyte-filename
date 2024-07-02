@@ -1,6 +1,6 @@
 <?php
 /**
- * Rename Multibyte Filename plugin for Craft CMS 3.x
+ * Rename Multibyte Filename plugin for Craft CMS 4.x / 5.x
  *
  * Rename a multibyte character filename, such as Japanese, Chinese, Korean, and so on, when assets are uploaded.
  *
@@ -73,7 +73,7 @@ class Filename extends Component
                 $filenameParts[] = $assetId;
                 break;
         }
-        
+
         // Volume Handle Name
         $addVolumeHandle = $settings->addVolumeHandle;
         $volumeHandle = $asset->volume->handle;
@@ -87,7 +87,7 @@ class Filename extends Component
                     break;
             }
         }
-        
+
         // Random String
         $addRandomString = $settings->addRandomString;
         if ($addRandomString) {
@@ -101,12 +101,12 @@ class Filename extends Component
                     break;
             }
         }
-        
+
         // Create a new filename
         $delimiter = $settings->delimiter;
         $extension = $asset->getExtension();
         $newFilename = implode($delimiter, $filenameParts) . '.' . $extension;
-        
+
         // Rename
         if ($hook === 'EVENT_BEFORE_SAVE_ELEMENT') {
             $asset->title = $filename;
@@ -114,7 +114,7 @@ class Filename extends Component
         }
         else {
             $folder = $asset->getFolder();
-            return Craft::$app->assets->moveAsset($asset, $folder, $newFilename);;
+            return Craft::$app->assets->moveAsset($asset, $folder, $newFilename);
         }
     }
 }

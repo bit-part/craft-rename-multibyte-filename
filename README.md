@@ -1,4 +1,4 @@
-# Rename Multibyte Filename plugin for Craft CMS 3.x
+# Rename Multibyte Filename plugin for Craft CMS 4.x / 5.x
 
 [日本語ドキュメント](README.ja.md)
 
@@ -8,7 +8,7 @@ When a file whose filename contains multibyte character is uploaded, the filenam
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+This plugin requires Craft CMS 4.0.0 or later. (Includes Craft CMS 5.0.0 or later)
 
 ## Installation
 

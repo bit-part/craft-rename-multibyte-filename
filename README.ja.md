@@ -1,4 +1,4 @@
-# Rename Multibyte Filename プラグイン（Craft CMS 3.x 用）
+# Rename Multibyte Filename プラグイン（Craft CMS 4.x / 5.x 用）
 
 [English](README.md)
 
@@ -8,7 +8,7 @@
 
 ## 必須要件
 
-Craft CMS 3.0.0-beta.23 またはそれ以降のバージョン
+Craft CMS 4.0.0 またはそれ以降のバージョン（Craft CMS 5.0.0 を含みます）
 
 ## インストール方法
 
